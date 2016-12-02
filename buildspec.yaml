@@ -1,0 +1,28 @@
+version: 0.1
+
+environment_variables:
+  plaintext:
+    key1: "value"
+    key2: "value"
+            
+phases:
+  install:
+    commands:
+      - echo install command1
+      - echo install command2
+  pre_build:
+    commands:
+      - $(aws ecr get-login --region us-west-2)
+  build:
+    commands:
+      - docker build -t rkh-nginx-proxy .
+      - docker tag rkh-nginx-proxy:latest 686403235852.dkr.ecr.us-west-2.amazonaws.com/rkh-nginx-proxy:latest
+  post_build:
+    commands:
+      - docker push 686403235852.dkr.ecr.us-west-2.amazonaws.com/rkh-nginx-proxy:latest
+artifacts:
+  type: zip
+  files:
+    - location
+    - location
+  discard-paths: yes

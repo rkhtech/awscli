@@ -19,6 +19,7 @@ phases:
       - docker tag rkh-nginx-proxy:latest 686403235852.dkr.ecr.us-west-2.amazonaws.com/rkh-nginx-proxy:latest
   post_build:
     commands:
+      - $(aws ecr get-login --region us-west-2)
       - docker push 686403235852.dkr.ecr.us-west-2.amazonaws.com/rkh-nginx-proxy:latest
 artifacts:
   type: zip

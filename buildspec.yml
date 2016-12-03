@@ -24,6 +24,5 @@ phases:
 artifacts:
   type: zip
   files:
-    - location
-    - location
+    - buildspec.yml
   discard-paths: yes

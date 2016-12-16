@@ -4,7 +4,7 @@ password=$(cat /home/randy/.docker/loginpass.txt)
 
 cd /home/randy/Dropbox/Docker/awstools/awscli
 
-docker build --no-cache --pull -t rkhtech/awscli .
+docker build --no-cache --pull -t rkhtech/awscli:latest .
 
 version=$(docker run -it rkhtech/awscli aws --version)
 oldversion=$(cat VERSION)
@@ -15,5 +15,5 @@ if [ "$version" != "$oldversion" ]; then
 	git commit -m "$version"
 	git push
 	docker login -u rkhtech -p $password
-	docker push
+	docker push rkhtech/awscli:latest
 fi

@@ -1,5 +1,6 @@
-MAINTAINER randy@hommel.name
 FROM ubuntu:latest
+
+MAINTAINER Randy Hommel
 
 RUN apt-get update && apt-get upgrade -y
 RUN apt-get install python curl jq -y

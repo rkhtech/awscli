@@ -8,7 +8,7 @@ docker build --no-cache --pull -t rkhtech/awscli:latest .
 
 version=$(docker run -it rkhtech/awscli aws --version)
 oldversion=$(cat VERSION)
-echo -e '# AWSCLI Version:'"\n"'```'"\n$version\n"'```'"\n## I used the following AWS documentation to deploy the awscli toolset:\n[Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)" > README.md
+echo -e '# AWSCLI Version:'"\n"'```'"\n$version\n"'```'"\n### I used the following AWS documentation to deploy the awscli toolset:\n[Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)" > README.md
 echo "$version" > VERSION
 
 if [ "$version" != "$oldversion" ]; then

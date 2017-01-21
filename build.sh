@@ -17,4 +17,6 @@ if [ "$version" != "$oldversion" ]; then
 	git push
 	docker login -u rkhtech -p $password
 	docker push rkhtech/awscli:latest
+else
+	echo "Version still the same.  Not updating repo."
 fi

@@ -18,10 +18,10 @@ EOF
 
 echo "$version" > VERSION
 
-if [ "$version" != "$oldversion" ]; then
+#if [ "$version" != "$oldversion" ]; then
 	git add *
 	git commit -m "$version"
 	git push
-else
-	echo "Version still the same.  Not updating repo."
-fi
+#else
+#	echo "Version still the same.  Not updating repo."
+#fi

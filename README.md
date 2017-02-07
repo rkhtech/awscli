@@ -18,11 +18,13 @@ docker pull rkhtech/awscli
 
 ### Basic example
 ```
-run -i rkhtech/awscli aws --version
+$ docker run -i rkhtech/awscli aws --version
+aws-cli/1.11.44 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.7
 ```
 *OR*
 ```
-$ alias aws='run -i rkhtech/awscli aws'
+$ alias aws='docker run -i rkhtech/awscli aws'
 $ aws --version
+aws-cli/1.11.44 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.7
 ```
 

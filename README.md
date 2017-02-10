@@ -31,7 +31,12 @@ aws-cli/1.11.46 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.9
 
 ### Example using environment variables to pass credentials into container
 ```
-docker run -i --rm 	-e AWS_DEFAULT_REGION=us-west-2 	-e AWS_ACCESS_KEY_ID=AKIAI67VIZ62T5I76Z6Q 	-e AWS_SECRET_ACCESS_KEY=DJl2b2B7HdcfU309WUF7zwc2ZRdHykqf2Jd3An2M 	rkhtech/awscli 	aws ec2 describe-instances
+docker run -i --rm \
+    -e AWS_DEFAULT_REGION=us-west-2 \
+    -e AWS_ACCESS_KEY_ID=AKIAI67VIZ62T5I76Z6Q \
+    -e AWS_SECRET_ACCESS_KEY=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 \
+    rkhtech/awscli \
+    aws ec2 describe-instances
 ```
 *Note:* These credentials have been removed and are no longer valid credentials.
 
@@ -40,7 +45,6 @@ docker run -i --rm 	-e AWS_DEFAULT_REGION=us-west-2 	-e AWS_ACCESS_KEY_ID=AKIAI6
 ```
 $ docker run -i --rm -e AWS_DEFAULT_REGION=us-west-2 rkhtech/awscli aws ec2 describe-instances
 ```
-*OR*
 #### Passing as an option to the aws cli:
 ```
 $ docker run -i --rm rkhtech/awscli aws ec2 describe-instances --region=us-west-2

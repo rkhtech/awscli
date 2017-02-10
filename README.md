@@ -27,7 +27,7 @@ $ alias aws='docker run -i rkhtech/awscli aws'
 $ aws --version
 aws-cli/1.11.46 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.9
 ```
-*Note:* If this container is installed on an EC2 instance, credentials are granted by way of a Role assigned to the Instance it runs on.
+*Note:* If the container is installed on an EC2 instance, credentials are granted by way of a Role assigned to the Instance the container runs on.  One gotcha is that you will still need to provide the default region to your commands (see below).
 
 ### Example using environment variables to pass credentials into container
 ```
@@ -43,9 +43,9 @@ docker run -i --rm \
 ### Passing default region to container
 #### Passing as an environment variable to the container:
 ```
-$ docker run -i --rm -e AWS_DEFAULT_REGION=us-west-2 rkhtech/awscli aws ec2 describe-instances
+docker run -i --rm -e AWS_DEFAULT_REGION=us-west-2 rkhtech/awscli aws ec2 describe-instances
 ```
 #### Passing as an option to the aws cli:
 ```
-$ docker run -i --rm rkhtech/awscli aws ec2 describe-instances --region=us-west-2
+docker run -i --rm rkhtech/awscli aws ec2 describe-instances --region=us-west-2
 ```

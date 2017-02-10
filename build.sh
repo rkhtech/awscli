@@ -2,7 +2,7 @@
 
 docker build --no-cache --pull -t rkhtech/awscli:latest .
 
-version=$(docker run -it rkhtech/awscli aws --version)
+version=$(docker run --rm -it rkhtech/awscli aws --version)
 oldversion=$(cat VERSION)
 
 cat > README.md << EOF
@@ -26,7 +26,7 @@ docker pull rkhtech/awscli
 
 ### Basic example
 \`\`\`
-$ docker run -i rkhtech/awscli aws --version
+$ docker run -i --rm rkhtech/awscli aws --version
 $version
 \`\`\`
 *OR*

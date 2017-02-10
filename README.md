@@ -1,6 +1,6 @@
 # AWSCLI Version:
 ```
-aws-cli/1.11.44 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.7
+aws-cli/1.11.46 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.9
 ```
 ### I used the following AWS documentation to install the awscli into the container:
 [Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
@@ -18,13 +18,13 @@ docker pull rkhtech/awscli
 
 ### Basic example
 ```
-$ docker run -i rkhtech/awscli aws --version
-aws-cli/1.11.44 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.7
+$ docker run -i --rm rkhtech/awscli aws --version
+aws-cli/1.11.46 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.9
 ```
 *OR*
 ```
 $ alias aws='docker run -i rkhtech/awscli aws'
 $ aws --version
-aws-cli/1.11.44 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.7
+aws-cli/1.11.46 Python/2.7.13 Linux/4.4.0-59-generic botocore/1.5.9
 ```
 

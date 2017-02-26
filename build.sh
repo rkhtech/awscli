@@ -5,6 +5,15 @@ docker build --no-cache --pull -t rkhtech/awscli:latest .
 version=$(docker run --rm -it rkhtech/awscli aws --version)
 oldversion=$(cat VERSION)
 
+if [ "$version" == "$oldversion" ]; then
+	echo "Version matched, skipping"
+	if [ "$1" == "-f" ]; then
+		echo "Actually, since you want to force me into it I'll build anyways.";
+	else
+		exit
+	fi
+fi
+
 cat > README.md << EOF
 # AWSCLI Version:
 \`\`\`

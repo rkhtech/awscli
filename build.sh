@@ -3,6 +3,10 @@
 docker build --no-cache --pull -t rkhtech/awscli:latest .
 
 version=$(docker run --rm -it rkhtech/awscli aws --version)
+if [ -z "$version" ]; then
+	echo "Docker build failed to produce a version number"
+	exit
+fi
 oldversion=$(cat VERSION)
 
 if [ "$version" == "$oldversion" ]; then

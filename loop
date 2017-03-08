@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo $(date)" Conainer is successfully running in an endless loop."
+
+while :
+do
+	sleep 1d
+done

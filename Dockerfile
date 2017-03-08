@@ -8,3 +8,5 @@ RUN curl -O https://bootstrap.pypa.io/get-pip.py
 
 RUN python get-pip.py
 RUN pip install awscli
+
+ADD loop /usr/local/bin/loop

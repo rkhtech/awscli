@@ -77,3 +77,6 @@ echo "$version" > VERSION
 git add *
 git commit -m "Automated Build"
 git push
+
+cat VERSION
+echo

@@ -1,6 +1,6 @@
 # AWSCLI Version:
 ```
-aws-cli/1.11.115 Python/2.7.13 Linux/4.4.0-79-generic botocore/1.5.78
+aws-cli/1.11.141 Python/2.7.13 Linux/4.4.0-93-generic botocore/1.6.8
 ```
 ### I used the following AWS documentation to install the awscli into the container:
 [Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html)
@@ -19,13 +19,13 @@ docker pull rkhtech/awscli
 ### Basic example
 ```
 $ docker run -i --rm rkhtech/awscli aws --version
-aws-cli/1.11.115 Python/2.7.13 Linux/4.4.0-79-generic botocore/1.5.78
+aws-cli/1.11.141 Python/2.7.13 Linux/4.4.0-93-generic botocore/1.6.8
 ```
 *OR*
 ```
 $ alias aws='docker run -i rkhtech/awscli aws'
 $ aws --version
-aws-cli/1.11.115 Python/2.7.13 Linux/4.4.0-79-generic botocore/1.5.78
+aws-cli/1.11.141 Python/2.7.13 Linux/4.4.0-93-generic botocore/1.6.8
 ```
 *Note:* If the container is installed on an EC2 instance, credentials are granted by way of a Role assigned to the Instance the container runs on.  One gotcha is that you will still need to provide the default region to your commands (see below).
 
